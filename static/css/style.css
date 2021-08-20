@@ -1,0 +1,30 @@
+#banner{
+    background-image: url('/static/banner.png');
+    background-repeat: no-repeat;
+    background-position-x: -180px;
+    
+    height: 500px;
+    
+}
+ .container  select{
+     display: inline-block;
+     margin-bottom: 15px;
+     margin-left: 30px;
+
+ }
+ .container  input{
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-left: 30px;
+     
+
+}
+#submit{
+    width: 150px;
+    background-color: #13222f;
+
+     
+}
+#submit:hover{
+    background-color: #52b9ab;
+}

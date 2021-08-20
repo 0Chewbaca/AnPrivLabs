@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<div class="jumbotron text-center" id="banner" >
+     
+    
+    
+</div>
+
+<br><br>
+
+
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% if user.is_authenticated %}
+        <meta http-equiv="" content="0;url=http://127.0.0.1:8000/">
+    {% else %}
+        <meta http-equiv="REFRESH" content="0;url=http://127.0.0.1:8000/admin/login/?next=/">
+    {% endif %}
+
+    
+    <div class="jumbotron text-left">
+        <div>
+            <label>Ram</label>
+            <input type="number" name="ram" id="ram" placeholder="Amount of ram" value="1024">
+        </div>
+
+        <div>
+            <label>Cpu Core</label>
+            <select name="core" id="core" class="form" value="1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
+        </div>
+
+        <div>
+            <label>Vulnerability </label>
+            <select name="vulnerability" id="vulnerability" class="form">
+                <option value="RCE-Webmin">RCE - Webmin</option>
+                <option value="RCE-GetSimpleCMS">RCE - GetSimpleCMS</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <button type="submit" onclick="getValues()" class="btn btn-primary" id="submit" >Deploy VM</button> 
+             
+        </div>
+
+        <br>
+        <script>
+            
+            function getValues() {
+                var vulnerability = document.getElementById("vulnerability").value;
+                var ram = document.getElementById("ram").value;
+                var core = document.getElementById("core").value;
+
+                $.ajax({
+
+                    type: "POST",
+                    url: "172.21.210.64:9999",
+                    data: vulnerability,
+                    data: ram,
+                    data: core,
+                    contentType: "text/html",
+                    success: console.log("Javascript success")
+                    
+                });
+            }
+
+        </script>
+
+    </div>
+
+    
+</form>
+{% endblock body %}
