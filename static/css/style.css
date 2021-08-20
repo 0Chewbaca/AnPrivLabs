@@ -1,0 +1,53 @@
+#banner{
+    background-image: url('/static/banner.png');
+    background-repeat: no-repeat;
+    background-position-x: -180px;
+    
+    height: 500px;
+    
+}
+.form{
+    height: 600px;
+}
+ .container  select{
+     display: inline ;
+     margin-bottom: 15px;
+     margin-left: 30px;
+     height: auto;
+
+ }
+ .container  input{
+    display: inline ;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    height: auto;
+
+}
+#submit{
+    width: 150px;
+    background-color: #13222f;
+
+     
+}
+#submit:hover{
+    background-color: #52b9ab;
+    
+}
+   
+
+.deploytext{
+    font-size: 30px;
+    margin-top: 15px;
+     
+    height: auto;
+    margin-left: 10px;
+}
+.progress{
+    margin-top: 10px;
+    
+}
+.progress-bar{
+    background-color: 13222f;
+    width: 50%;
+    
+}
